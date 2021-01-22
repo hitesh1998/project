@@ -1,4 +1,4 @@
-
+speechRecognition
 sounddevice
 Werkzeug==0.15.5
 keras
@@ -6,4 +6,6 @@ pandas
 scikit-learn>=0.18
 librosa
 noisereduce
-random
+pickle
+pyaudio
+py
