@@ -2,6 +2,7 @@ ffmpeg-python
 Flask
 Flask-RESTful
 future
+pandas
 gunicorn
 itsdangerous
 Jinja2
