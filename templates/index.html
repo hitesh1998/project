@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">      
+
+
+<title> Sound Analysis </title>
+</head>
+
+<br><br>
+<marquee>
+<h3>  Sound Analysis   </h3>
+</marquee>
+<br><br>
+
+
+<body style="border:3px;
+	border-style:inset;
+    padding: 1em;
+	border-color:#461463;
+	background-color:#C6DEFF">
+	
+	
+	<script>
+      navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(function(stream) {
+        console.log('You let me use your mic!')
+      })
+      .catch(function(err) {
+        console.log('No mic for you!')
+      });
+    </script>
+	
+<div class="bordered_a">
+<div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
+
+<form id="contact-us"  action="{{ url_for('predict') }}"
+enctype="multipart/form-data" method="post">
+ <h3>Please specify a file(.mp3):</h3><br>
+ 
+ 
+<input id="name"  class="form-btn semibold"  type="file" name="file" >
+</p>
+
+<div class="col-xs-6 wow animated slideInRight" data-wow-delay=".5s">
+<i class="fa fa-circle-o-notch fa-spin">
+   <input id="submit" class="form-btn semibold" type = "submit" value = "Predict" onsubmit="{{ url_for('index')}}"/>
+</i>
+
+</div>
+
+</div>
+</form>
+
+
+
+	<br>
+	<br>
+<form action = "{{ url_for('addrec') }}" method = "POST" >
+     <h3 id="name">Recording(Recording 10sec.)</h3>
+     <input class="form-btn semibold" type = "submit" value = "Record" onsubmit="{{ url_for('index')}}"/>
+     <br>
+	 </form>
+</div>
+
+<br><br>
+<div class="bordered">
+<h3 style="color:green;">
+	{{ predict_value}}
+	</h3>
+	
+</div>
+
+</body>
+</html>
