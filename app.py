@@ -2,14 +2,14 @@ from __future__ import division, print_function
 import numpy as np
 from scipy.io import wavfile
 from pydub import AudioSegment
-import sounddevice as sd
+#import sounddevice as sd
 from scipy.io.wavfile import write
 import pandas as pd
 import librosa.display
 import librosa
 import noisereduce as nr
 import random
-import pyaudio
+#import pyaudio
 import pickle 
 import speech_recognition 
 # Flask utils
