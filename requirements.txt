@@ -3,6 +3,7 @@ pydub
 Werkzeug==0.15.5
 scipy
 pandas
+SoundFile
 scikit-learn>=0.18
 librosa
 noisereduce
